@@ -1,0 +1,39 @@
+  // need to save data drag and drop
+
+
+       {
+          "name":"Kristina Zasiadko",
+           "image":"img-1.jpg"
+
+},
+
+       {
+          "name": "Gabriel Wilson",
+           "image":"img-2.jpg"
+
+},
+
+
+       {
+          "name":"Ronelle Cesicon",
+           "image":"img-3.jpg"
+
+},
+
+       {
+          "name":"James Khosravi",
+           "image":"img-4.jpg"
+
+},
+
+       {
+          "name":"Annika Hayden",
+           "image":"img-5.jpg"
+
+},
+
+       {
+          "name":"Donald Horton",
+           "image":"img-6.jpg"
+
+}

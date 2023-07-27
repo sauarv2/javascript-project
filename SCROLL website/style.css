@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  /* background-color: #ffffff; */
+  background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+}
+
+.fontpage1 {
+  background: url("images/natiure.jpg");
+  min-height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.fontpage2 {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10rem 5rem;
+}
+.fontpage2 .text {
+  /* border: 1px solid orange; */
+  opacity: 0;
+  width: 40%;
+  transition: 1s all ease-in;
+  transform: translateY(17rem);
+}
+.fontpage2 .adv {
+  opacity: 1;
+  transform: translateY(0rem);
+}
+.fontpage2 .text h2 {
+  font-size: 2rem;
+  color: #2c3a47;
+}
+.fontpage2 .text p {
+  font-size: 1.2rem;
+  color: rgba(72, 84, 96, 1);
+}
+.fontpage2 .pic {
+  border: 1px solid green;
+}
+.fontpage2 .pic img {
+  width: 30rem;
+  height: 20rem;
+  object-fit: cover;
+  object-position: center;
+}

@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\JavaScript Practice"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\personal web devloping\\website(1)\\Easy Tutorial(youtube)\\code"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Circle expanding"
+	}
+}

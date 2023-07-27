@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hexBox {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  text-align: center;
+}
+.hexBox h1 {
+  font-size: 5rem;
+  background: linear-gradient(90deg, #00dbde, #fc00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hexBox .Box {
+  width: 18.75rem;
+  height: 12.5rem;
+  background: #bc1d1d;
+  margin: 5rem auto;
+}
+
+.hexBox .refresh_btn {
+  font-size: 1.5rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #a1eba4;
+  color: #fff;
+}
+.hexBox .refresh_btn:active {
+  scale: 0.95;
+}

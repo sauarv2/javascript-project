@@ -1,4 +1,3 @@
-
 // var datee1 = new Date();
 // var datee2 = new Date("15 feb 2022");
 // var difff = new Date(datee2 - datee1);
@@ -11,45 +10,70 @@
 
 // console.log("remaining time = " + years + " years, " + months + " months, " + days + " days.");
 
+const putDate = "1 jan 2024";
 
-const putDate = "29 nov 2022";
+const DaysRl = document.getElementById("Day");
+const HoursRl = document.getElementById("Hour");
+const MinutesRl = document.getElementById("Minute");
+const SecondsRl = document.getElementById("Second");
 
-const DaysRl = document.getElementById('Day');
-const HoursRl =  document.getElementById('Hour');
-const MinutesRl =  document.getElementById('Minute');
-const SecondsRl =  document.getElementById('Second');
+let futureDate = new Date(putDate);
+let todaysDate = new Date();
 
-function remainingTime(){
-      const putingDate = new Date(putDate);
-      const currentDate =new Date();
+let remaining_day = futureDate - todaysDate;
 
-      const totalSecound = (putingDate - currentDate)/1000;
-    //   console.log(totalSecound);
-       const Days = Math.floor(totalSecound/3600/24);
+const remainingTime = function () {
+  let putingDate = new Date(putDate);
+  let currentDate = new Date();
+  //   const putingDate = new Date(putDate);
+  //   const currentDate = new Date();
+  //   console.log(putingDate - currentDate);
 
-       const Hours = Math.floor(totalSecound/3600)%24;
+  //   frist take substract newyear date to current date into total secound->
 
-       const Minutes = Math.floor(totalSecound/60)%60;
+  const totalSecound = (putingDate - currentDate) / 1000;
 
-       const Seconds = Math.floor(totalSecound)%60;
+  //   count days from totalsecound->
+  const Days = Math.floor(totalSecound / 86400);
 
-    //   const Seconds = getSeconds();
+  //   count hours from totalsecound ->
+  const Hours = Math.floor(totalSecound / 3600) % 24;
 
-    DaysRl.innerHTML = timeFormat(Days);
+  //   count minutes from totalsecound->
+  const Minutes = Math.floor(totalSecound / 60) % 60;
 
-    HoursRl.innerHTML = timeFormat(Hours);
+  //   count secounds from totalsecound->
+  const Seconds = Math.floor(totalSecound) % 60;
 
-    MinutesRl.innerHTML = timeFormat(Minutes);
+  //   const Seconds = getSeconds();
 
-    SecondsRl.innerHTML = timeFormat(Seconds);
+  //   this numbers Days Hours Minutes  Seconds  to show in webpages ->
 
+  DaysRl.innerHTML = timeFormat(Days);
 
-}
+  HoursRl.innerHTML = timeFormat(Hours);
 
-function timeFormat(time){
- return time < 10 ?(`0${time}`):(time);
+  MinutesRl.innerHTML = timeFormat(Minutes);
+
+  SecondsRl.innerHTML = timeFormat(Seconds);
+};
+// if number less then  ten minutees ->
+
+function timeFormat(time) {
+  return time < 10 ? `0${time}` : time;
 }
 
 remainingTime();
 
- setInterval(remainingTime,1000);
+if (remaining_day <= 0) {
+  clearInterval(remainingTime);
+  DaysRl.innerHTML = 0;
+
+  HoursRl.innerHTML = 0;
+
+  MinutesRl.innerHTML = 0;
+
+  SecondsRl.innerHTML = 0;
+} else {
+  setInterval(remainingTime, 1000);
+}

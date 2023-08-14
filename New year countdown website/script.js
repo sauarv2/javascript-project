@@ -65,6 +65,8 @@ function timeFormat(time) {
 
 remainingTime();
 
+//  target days are complete days wii be 0 or -1 so use  clearInterval(remainingTime) so days will be 0 if target are complete->
+
 if (remaining_day <= 0) {
   clearInterval(remainingTime);
   DaysRl.innerHTML = 0;
@@ -75,5 +77,6 @@ if (remaining_day <= 0) {
 
   SecondsRl.innerHTML = 0;
 } else {
+  // use setInterval(remainingTime, 1000) call the function every 1sec ->
   setInterval(remainingTime, 1000);
 }

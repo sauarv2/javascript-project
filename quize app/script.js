@@ -1,11 +1,12 @@
+// create a object*************
 const questionData = [
   {
-    question: "what is my Age ?",
-    a: "25",
+    question: "what is my bunu age ?",
+    a: "24",
     b: "28",
     c: "26",
     d: "21",
-    correct: "c",
+    correct: "a",
   },
   {
     question: "who is our Prime minister ?",
@@ -32,6 +33,11 @@ const questionData = [
     correct: "c",
   },
 ];
+let answar = undefined;
+
+let score = 0;
+
+// DOM SELECTION
 const questionEL = document.getElementById("question");
 
 const Atext = document.getElementById("Atext");
@@ -42,56 +48,64 @@ const button = document.getElementById("button");
 const lastPageEL = document.getElementById("lastPage");
 const selectEL = document.querySelectorAll(".chk");
 
-let questiondataNum = 0;
+let questiondataNum = 0; //   TAKE 0 AS VARIABLE
 
-let score = 0;
-lodeText();
-// questiondataNum++;
+lodequestion();
 
-function checkedProperty() {
-  let se = undefined;
-  selectEL.forEach((selectE) => {
-    if (selectE.checked) {
-      se = selectE.id;
+function lodequestion() {
+  deSelecttheAns();
+  const Allquestiondata = questionData[questiondataNum]; //  questionData[0]
+
+  questionEL.innerText = Allquestiondata.question; //  questionData[0].question -> "what is my bunu age ?"
+
+  Atext.innerHTML = Allquestiondata.a; //  questionData[0].a -> 24
+  Btext.innerText = Allquestiondata.b; //  questionData[0].b -> 28
+  Ctext.innerText = Allquestiondata.c; //  questionData[0].c ->26
+  Dtext.innerText = Allquestiondata.d; //  questionData[0].d ->21
+}
+
+// ************ SELECT THE ANSWER *****
+
+function SelecttheAns() {
+  // let ans = undefined;
+  let ans; // take a empty variable so return the selected value
+
+  selectEL.forEach((selecAns) => {
+    if (selecAns.checked) {
+      ans = selecAns.id; // get the Id of the value
     }
   });
-  return se;
+  return ans; // return the value
 }
-function desclect() {
-  selectEL.forEach((selectE) => {
-    selectE.checked = false;
+// uncheck the default  selected option
+function deSelecttheAns() {
+  selectEL.forEach((selecAns) => {
+    selecAns.checked = false;
   });
 }
-function lodeText() {
-  const currentQuiz = questionData[questiondataNum];
 
-  questionEL.innerHTML = currentQuiz.question;
-  // lastPageEL.innerHTML = currentQuiz;
-
-  Atext.innerHTML = currentQuiz.a;
-  Btext.innerHTML = currentQuiz.b;
-  Ctext.innerHTML = currentQuiz.c;
-  Dtext.innerHTML = currentQuiz.d;
-  // console.log(questionData.length);
-  desclect();
-}
+// LODING QUIZ****************
 
 button.addEventListener("click", () => {
-  const anwasr = checkedProperty();
+  // if i press the submit button lode the next question
 
-  // questiondataNum++;
-  console.log(anwasr);
-  if (anwasr) {
-    if (anwasr === questionData[questiondataNum].correct) {
+  const ans = SelecttheAns(); // now ans = selected value that was return
+  console.log(ans);
+
+  //if not get the value it will not go to the next question*****
+  if (ans) {
+    if (ans === questionData[questiondataNum].correct) {
+      //if the selected value that is return value is equal to question correct value  so score will be increment
       score++;
     }
-    questiondataNum++;
-    if (questiondataNum < questionData.length) {
-      // lodeText();
 
-      lodeText();
-    } else {
-      lastPageEL.innerHTML = `<h2>Your answar correctly ${score}/${questionData.length}question</h2>`;
-    }
+    questiondataNum++; //increment the number 0-> 1 -> 2 -> 3 -> 4 like this
+
+    questiondataNum < questionData.length
+      ? lodequestion()
+      : // write the score at the end******
+        (lastPageEL.innerHTML = `<h2>Your answar correctly ${score}/${questionData.length} question</h2>`);
+  } else {
+    alert("Please select the answer"); // if not select the answer
   }
 });

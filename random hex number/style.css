@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+body {
+  background: rgba(135, 207, 235, 0.43);
+  height: 100vh;
+  overflow: none;
+}
+nav {
+  /* border: 1px solid red; */
+  background: #fff;
+  box-shadow: 0 0 15px 0 #000;
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  display: fixed;
+
+  justify-content: space-between;
+}
+nav h1 {
+  /* border: 1px solid rgb(0, 128, 0); */
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin-left: 30px;
+  color: rgb(135, 206, 235);
+}
+nav .nav_tool {
+  /* border: 1px solid red; */
+  display: inline-block;
+  line-height: 30px;
+  margin: 0 300px;
+  padding: 20px;
+}
+
+nav .nav_tool a {
+  font-size: 27px;
+  color: rgb(31, 27, 59);
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.container {
+  height: 80vh;
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container .backColor {
+  /* border: 1px solid rgb(0, 128, 0); */
+  padding: 20px 60px;
+  border-radius: 20px;
+  background-color: #000;
+  color: rgb(135, 206, 235);
+  margin-bottom: 60px;
+  font-size: 40px;
+}
+
+span {
+  /* color: red; */
+}
+.container .btn {
+  padding: 20px 40px;
+  font-size: 25px;
+  color: rgb(31, 27, 59);
+  border: 3px solid rgb(31, 27, 59);
+  background: none;
+  letter-spacing: 3px;
+  border-radius: 20px;
+  font-weight: 700;
+}

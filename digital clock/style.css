@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #3d3d3d;
+  color: #fcfcf9;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.clock {
+  outline: 5px solid #fff200;
+  width: 40%;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.clock .container {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+/* hrs ****************/
+.clock .container #hrs {
+  position: relative;
+}
+/* use after method which is pseudo method */
+
+.clock .container #hrs::after {
+  content: "Hours";
+  position: absolute;
+  font-size: 14px;
+  bottom: -12px;
+  left: 20%;
+}
+
+/* min ****************/
+.clock .container #min {
+  position: relative;
+}
+.clock .container #min::after {
+  content: "Minutes";
+  position: absolute;
+  font-size: 14px;
+  bottom: -12px;
+  left: 14%;
+}
+
+/* sec ****************/
+.clock .container #sec {
+  position: relative;
+}
+.clock .container #sec::after {
+  content: "Secounds";
+  position: absolute;
+  font-size: 14px;
+  bottom: -12px;
+  left: 10%;
+}
